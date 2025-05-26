@@ -1,0 +1,16 @@
+<!--
+  SaaS Product 3D Data Visualization Icon
+  Minimalist SVG favicon for a 3D-enabled landing page.
+  Designed with primary brand color.
+-->
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" aria-describedby="desc">
+  <title id="title">3D Data Icon</title>
+  <desc id="desc">Stylized 3D data visualization icon for a SaaS product</desc>
+  <path d="M16 16L32 32L48 16" stroke="#007bff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 48L32 32L48 48" stroke="#007bff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 32V56" stroke="#007bff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M4 8V24" stroke="#007bff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M60 8V24" stroke="#007bff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M4 40V56" stroke="#007bff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M60 40V56" stroke="#007bff" stroke-width="4" stroke-linecap="round"/>
+</svg>
