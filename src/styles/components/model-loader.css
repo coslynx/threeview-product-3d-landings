@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles for the ModelLoader component */
+.model-loader-container {
+    @apply absolute top-0 left-0 w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300;
+    font-size: 1.5rem;
+    font-weight: medium;
+    will-change: transform, opacity;
+}
