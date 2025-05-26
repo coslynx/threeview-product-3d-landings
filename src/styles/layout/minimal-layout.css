@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Provide a base style for the layout */
+body {
+  @apply font-sans antialiased;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Apply main styles to centralize the primary containers */
+main {
+  @apply container mx-auto py-8 flex-grow;
+  will-change: transform, opacity;
+}
+
+/* Basic wrapper for content */
+.\_minimal-layout-container {
+  @apply flex flex-col min-h-screen;
+}
