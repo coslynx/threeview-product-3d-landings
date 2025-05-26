@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styling for the LandingHero component */
+.landing-hero {
+  @apply relative h-screen flex items-center justify-center overflow-hidden;
+  will-change: transform, opacity;
+}
+
+/* Styles for the background gradient */
+.landing-hero > div:first-child {
+  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900 to-purple-700 opacity-50 z-0;
+  will-change: opacity;
+}
+
+/* Styles for the text content */
+.landing-hero > div.container {
+  @apply container mx-auto text-center relative z-10;
+}
+
+/* Styles for the text content, and ensure is mobile optimized */
+.landing-hero h1 {
+  @apply text-4xl md:text-6xl font-bold text-white mb-4;
+  will-change: transform, opacity;
+}
+
+/* Responsive text styling */
+.landing-hero p {
+  @apply text-lg md:text-xl text-gray-300 mb-8;
+  will-change: transform, opacity;
+}
+
+/* Styling the link */
+.landing-hero div a {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors;
+  will-change: transform, opacity;
+}
+
+/*
+  The background here must have the highest z order to properly be set.
+  And this must not impact the existing properties.
+*/
+.landing-hero > div:last-child {
+  @apply absolute bottom-0 left-0 w-full h-1/2 md:h-2/3 z-0;
+  will-change: transform, opacity;
+}
+
+/* Canvas must also inherit the 100 to take up parent. The z order is automatically set by Three JS object and has it's own z property.*/
+.landing-hero canvas {
+  @apply absolute top-0 left-0 w-full h-full;
+  will-change: transform, opacity;
+}
