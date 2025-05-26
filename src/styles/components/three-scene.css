@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles for the ThreeScene component container */
+.three-scene-container {
+  @apply relative w-full h-full overflow-hidden;
+  will-change: transform, opacity;
+}
+
+/* Styles for the 3D rendering Canvas */
+.three-scene-canvas {
+  @apply absolute top-0 left-0 w-full h-full;
+  z-index: 0;
+  will-change: transform;
+}
+
+/* Styles for the overlay element on top of the scene */
+.three-scene-overlay {
+  @apply absolute top-0 left-0 w-full h-full pointer-events-none;
+  z-index: 10;
+  will-change: transform, opacity;
+}
+
+/* Use for accessibility */
+.three-scene-overlay > * {
+  pointer-events: auto;
+}
+
+/* Text instructions within the 3D scene */
+.three-scene-instructions {
+  @apply absolute bottom-0 left-0 text-sm font-bold text-white p-2 md:p-4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Implement reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .three-scene-container,
+  .three-scene-canvas,
+  .three-scene-overlay {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Responsive design adjustments */
+@media (min-width: 640px) {
+  .three-scene-instructions {
+    @apply text-base;
+  }
+}
+
+@media (min-width: 768px) {
+  .three-scene-instructions {
+    @apply text-lg;
+  }
+}
+
+@media (min-width: 1280px) {
+  .three-scene-instructions {
+    @apply text-xl;
+  }
+}
