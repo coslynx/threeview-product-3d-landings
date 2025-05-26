@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles for the ScrollScene component */
+.scroll-scene {
+  @apply relative w-full h-screen overflow-hidden;
+  will-change: transform, opacity; /* Promote layer for smoother animations */
+}
+
+/* Container for 3D content */
+.scroll-scene-content {
+  @apply absolute top-0 left-0 w-full h-full;
+  will-change: transform; /* Ensure smooth scrolling */
+}
+
+/* Responsive adjustments for 3D canvas */
+.scroll-scene canvas {
+  @apply block; /* Prevent extra spacing below the canvas */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure 3D content is above other elements */
+  pointer-events: none; /* Prevent canvas from capturing pointer events by default */
+}
+
+/* Section styles to trigger scroll animations */
+.section {
+  @apply relative w-full h-screen flex items-center justify-center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
+}
+
+/* Add more sections as needed */
+.section-1 {
+  @apply bg-blue-500;
+}
+
+.section-2 {
+  @apply bg-green-500;
+}
+
+.section-3 {
+  @apply bg-red-500;
+}
+
+/* Scroll hint for users to know there's more content */
+.scroll-hint {
+  @apply absolute bottom-4 left-1/2 transform -translate-x-1/2 text-gray-300 text-sm animate-bounce;
+}
+
+/* Parallax effect for added depth */
+.parallax {
+  will-change: transform; /* Indicate to the browser that this element will be transformed */
+}
+
+/* For loading 3D models or GLTF, manage here */
+.model-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Performance enhancements */
+.optimize-gpu {
+  transform: translate3d(0, 0, 0); /* Force hardware acceleration */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .scroll-scene {
+    /* Adjust for smaller screens */
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-scene * {
+    animation: none !important;
+    transition: none !important; /* Disable transitions for accessibility */
+  }
+}
+
+/* Accessibility adjustments */
+.accessible-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
